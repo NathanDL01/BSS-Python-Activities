@@ -1,0 +1,39 @@
+from random import choice
+
+game = ["ROCK", "PAPER", "SCISSORS"]
+
+print("Rock Paper and Scissors (First to THREE)")
+computer_player=choice(game)
+
+computer_score = 0
+player_score = 0
+
+while player_score < 5 and computer_score < 5:
+    player_input= input("Type your choice between ROCK, PAPER, or SCISSORS (use capital letters only): ")
+    
+    print("Computer Answer: ", computer_player)
+    
+    if player_input == computer_player:
+        print("\nIt's a tie!")
+    elif player_input == "ROCK" and computer_player == "SCISSORS":
+        print("\nYou win! Rock smashes Scissors.")
+        player_score += 1
+    elif player_input == "PAPER" and computer_player == "ROCK":
+        print("\nYou win! Paper covers Rock .")
+        player_score += 1
+    elif player_input == "SCISSORS" and computer_player == "PAPER":
+        print("\nYou win! Scissors cuts Paper .")
+        player_score += 1
+    else:
+        print("The computer wins!")
+        computer_score += 1
+
+    print ("Computer: ", computer_score)
+    print ("Player: ", player_score)
+    
+    if player_score == 5:
+        print("You win!")
+        break
+    elif computer_score ==5:
+        print("The computer wins!")
+        break
